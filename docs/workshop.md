@@ -149,9 +149,9 @@ This lab depends on the following Azure services
 
 1. Clone this repository locally.
     ```bash
-    git clone https://github.com/yelghali/hands-on-lab-quality-security-llmops.git  
+    git clone https://github.com/microsoft/llmsecops-hands-on-lab.git  
     
-    cd hands-on-lab-quality-security-llmops
+    cd llmsecops-hands-on-lab
 
     ```
 
