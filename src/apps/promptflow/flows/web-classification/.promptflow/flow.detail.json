@@ -1,0 +1,1037 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "url": "https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2"
+      },
+      "output": {
+        "category": "Academic",
+        "evidence": "Both"
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda",
+      "root_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda",
+      "source_run_id": null,
+      "flow_id": "default_flow_id",
+      "start_time": "2024-03-17T17:18:21.046911Z",
+      "end_time": "2024-03-17T17:18:24.527192Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1710692301.046911,
+          "end_time": 1710692304.527192,
+          "children": [
+            {
+              "name": "fetch_text_content_from_url",
+              "type": "Tool",
+              "inputs": {
+                "url": "https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2"
+              },
+              "output": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow - Azure Machine Learning | Microsoft Learn\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\nThis browser is no longer supported.\nUpgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.\n\n\r\nDownload Microsoft Edge\t\t\t\t\t\n\r\nMore info about Internet Explorer and Microsoft Edge\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\nTable of contents\t\t\t\t\t\t\n\n\n\nExit focus mode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\nEdit\n\n\n\n\n\nPrint\n\n\n\n\n\n\nTwitter\n\n\n\n\n\nLinkedIn\n\n\n\n\n\nFacebook\n\n\n\n\n\nEmail\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow\n\n\n\n\r\nArticle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n11/02/2023\n\n\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 contributors\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIn this article\n\n\nIn prompt Flow, you can deploy flow to an Azure Machine Learning managed online endpoint for real-time inference.\nWhen consuming the endpoint by sending a request, the default behavior is that the online endpoint will keep waiting until the whole response is ready, and then send it back to the client. This can cause a long delay for the client and a poor user experience.\nTo avoid this, you can use streaming when you consume the endpoints. Once streaming enabled, you don't have to wait for the whole response to be ready. Instead, the server will send back the response in chunks as they're generated. The client can then display the response progressively, with less waiting time and more interactivity.\nThis article will describe the scope of streaming, how streaming works, and how to consume streaming endpoints.\nCreate a streaming enabled flow\nIf you want to use the streaming mode, you need to create a flow that has a node that produces a string generator as the flowâs output. A string generator is an object that can return one string at a time when reques",
+              "start_time": 1710692301.046911,
+              "end_time": 1710692301.408659,
+              "error": null,
+              "children": [],
+              "node_name": "fetch_text_content_from_url",
+              "parent_id": "",
+              "id": "af92d5cd-1103-431b-a82d-53e04bc0c244",
+              "system_metrics": {}
+            },
+            {
+              "name": "prepare_examples",
+              "type": "Tool",
+              "inputs": {},
+              "output": [
+                {
+                  "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                  "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                  "category": "App",
+                  "evidence": "Both"
+                },
+                {
+                  "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                  "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                  "category": "Channel",
+                  "evidence": "URL"
+                },
+                {
+                  "url": "https://arxiv.org/abs/2303.04671",
+                  "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                  "category": "Academic",
+                  "evidence": "Text content"
+                },
+                {
+                  "url": "https://ab.politiaromana.ro/",
+                  "text_content": "There is no content available for this text.",
+                  "category": "None",
+                  "evidence": "None"
+                }
+              ],
+              "start_time": 1710692301.046911,
+              "end_time": 1710692301.055921,
+              "error": null,
+              "children": [],
+              "node_name": "prepare_examples",
+              "parent_id": "",
+              "id": "9d0ff2b8-7c4f-40b9-b369-c6ea46f670ef",
+              "system_metrics": {}
+            },
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Tool",
+              "inputs": {
+                "prompt": "system:\nPlease summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\n\nuser:\nText: {{text}}\nSummary: ",
+                "deployment_name": "gpt-35-turbo",
+                "model": "gpt-3.5-turbo",
+                "max_tokens": 128,
+                "temperature": 0.2,
+                "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow - Azure Machine Learning | Microsoft Learn\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\nThis browser is no longer supported.\nUpgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.\n\n\r\nDownload Microsoft Edge\t\t\t\t\t\n\r\nMore info about Internet Explorer and Microsoft Edge\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\nTable of contents\t\t\t\t\t\t\n\n\n\nExit focus mode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\nEdit\n\n\n\n\n\nPrint\n\n\n\n\n\n\nTwitter\n\n\n\n\n\nLinkedIn\n\n\n\n\n\nFacebook\n\n\n\n\n\nEmail\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow\n\n\n\n\r\nArticle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n11/02/2023\n\n\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 contributors\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIn this article\n\n\nIn prompt Flow, you can deploy flow to an Azure Machine Learning managed online endpoint for real-time inference.\nWhen consuming the endpoint by sending a request, the default behavior is that the online endpoint will keep waiting until the whole response is ready, and then send it back to the client. This can cause a long delay for the client and a poor user experience.\nTo avoid this, you can use streaming when you consume the endpoints. Once streaming enabled, you don't have to wait for the whole response to be ready. Instead, the server will send back the response in chunks as they're generated. The client can then display the response progressively, with less waiting time and more interactivity.\nThis article will describe the scope of streaming, how streaming works, and how to consume streaming endpoints.\nCreate a streaming enabled flow\nIf you want to use the streaming mode, you need to create a flow that has a node that produces a string generator as the flowâs output. A string generator is an object that can return one string at a time when reques"
+              },
+              "output": "The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow.",
+              "start_time": 1710692301.411927,
+              "end_time": 1710692304.044676,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.chat.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-35-turbo",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text."
+                      },
+                      {
+                        "role": "user",
+                        "content": "Text: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow - Azure Machine Learning | Microsoft Learn\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\nThis browser is no longer supported.\nUpgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.\n\n\r\nDownload Microsoft Edge\t\t\t\t\t\n\r\nMore info about Internet Explorer and Microsoft Edge\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\nTable of contents\t\t\t\t\t\t\n\n\n\nExit focus mode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\nEdit\n\n\n\n\n\nPrint\n\n\n\n\n\n\nTwitter\n\n\n\n\n\nLinkedIn\n\n\n\n\n\nFacebook\n\n\n\n\n\nEmail\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow\n\n\n\n\r\nArticle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n11/02/2023\n\n\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 contributors\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIn this article\n\n\nIn prompt Flow, you can deploy flow to an Azure Machine Learning managed online endpoint for real-time inference.\nWhen consuming the endpoint by sending a request, the default behavior is that the online endpoint will keep waiting until the whole response is ready, and then send it back to the client. This can cause a long delay for the client and a poor user experience.\nTo avoid this, you can use streaming when you consume the endpoints. Once streaming enabled, you don't have to wait for the whole response to be ready. Instead, the server will send back the response in chunks as they're generated. The client can then display the response progressively, with less waiting time and more interactivity.\nThis article will describe the scope of streaming, how streaming works, and how to consume streaming endpoints.\nCreate a streaming enabled flow\nIf you want to use the streaming mode, you need to create a flow that has a node that produces a string generator as the flowâs output. A string generator is an object that can return one string at a time when reques\nSummary:"
+                      }
+                    ],
+                    "temperature": 0.2,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "stop": null,
+                    "max_tokens": 128,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "logit_bias": {},
+                    "user": "",
+                    "response_format": null
+                  },
+                  "output": {
+                    "id": "chatcmpl-93oRKyxDUDwp9oV0G7bisA89ki15o",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow.",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        },
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ],
+                    "created": 1710695902,
+                    "model": "gpt-35-turbo",
+                    "object": "chat.completion",
+                    "system_fingerprint": null,
+                    "usage": {
+                      "completion_tokens": 101,
+                      "prompt_tokens": 406,
+                      "total_tokens": 507
+                    },
+                    "prompt_filter_results": [
+                      {
+                        "prompt_index": 0,
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "start_time": 1710692301.423728,
+                  "end_time": 1710692304.044676,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "9047566e-8d68-44d3-a855-04f81e8d07f9",
+                  "id": "8ca61bda-8254-4efa-a5c5-d0276628750b",
+                  "system_metrics": {
+                    "completion_tokens": 101,
+                    "prompt_tokens": 406,
+                    "total_tokens": 507
+                  }
+                }
+              ],
+              "node_name": "summarize_text_content",
+              "parent_id": "",
+              "id": "9047566e-8d68-44d3-a855-04f81e8d07f9",
+              "system_metrics": {
+                "completion_tokens": 101,
+                "prompt_tokens": 406,
+                "total_tokens": 507
+              }
+            },
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Tool",
+              "inputs": {
+                "prompt": "system:\nYour task is to classify a given url into one of the following categories:\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nuser:\nThe selection range of the value of \"category\" must be within \"Movie\", \"App\", \"Academic\", \"Channel\", \"Profile\", \"PDF\" and \"None\".\nThe selection range of the value of \"evidence\" must be within \"Url\", \"Text content\", and \"Both\".\nHere are a few examples:\n{% for ex in examples %}\nURL: {{ex.url}}\nText content: {{ex.text_content}}\nOUTPUT:\n{\"category\": \"{{ex.category}}\", \"evidence\": \"{{ex.evidence}}\"}\n\n{% endfor %}\n\nFor a given URL and text content, classify the url to complete the category and indicate evidence:\nURL: {{url}}\nText content: {{text_content}}.\nOUTPUT:",
+                "deployment_name": "gpt-35-turbo",
+                "model": "gpt-3.5-turbo",
+                "max_tokens": 128,
+                "temperature": 0.2,
+                "url": "https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2",
+                "text_content": "The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow.",
+                "examples": [
+                  {
+                    "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                    "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                    "category": "App",
+                    "evidence": "Both"
+                  },
+                  {
+                    "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                    "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                    "category": "Channel",
+                    "evidence": "URL"
+                  },
+                  {
+                    "url": "https://arxiv.org/abs/2303.04671",
+                    "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                    "category": "Academic",
+                    "evidence": "Text content"
+                  },
+                  {
+                    "url": "https://ab.politiaromana.ro/",
+                    "text_content": "There is no content available for this text.",
+                    "category": "None",
+                    "evidence": "None"
+                  }
+                ]
+              },
+              "output": "{\"category\": \"Academic\", \"evidence\": \"Both\"}",
+              "start_time": 1710692304.052726,
+              "end_time": 1710692304.511564,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.chat.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-35-turbo",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "Your task is to classify a given url into one of the following categories:\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both."
+                      },
+                      {
+                        "role": "user",
+                        "content": "The selection range of the value of \"category\" must be within \"Movie\", \"App\", \"Academic\", \"Channel\", \"Profile\", \"PDF\" and \"None\".\nThe selection range of the value of \"evidence\" must be within \"Url\", \"Text content\", and \"Both\".\nHere are a few examples:\nURL: https://play.google.com/store/apps/details?id=com.spotify.music\nText content: Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.\nOUTPUT:\n{\"category\": \"App\", \"evidence\": \"Both\"}\n\nURL: https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw\nText content: NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.\nOUTPUT:\n{\"category\": \"Channel\", \"evidence\": \"URL\"}\n\nURL: https://arxiv.org/abs/2303.04671\nText content: Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.\nOUTPUT:\n{\"category\": \"Academic\", \"evidence\": \"Text content\"}\n\nURL: https://ab.politiaromana.ro/\nText content: There is no content available for this text.\nOUTPUT:\n{\"category\": \"None\", \"evidence\": \"None\"}\n\n\nFor a given URL and text content, classify the url to complete the category and indicate evidence:\nURL: https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2\nText content: The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow..\nOUTPUT:"
+                      }
+                    ],
+                    "temperature": 0.2,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "stop": null,
+                    "max_tokens": 128,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "logit_bias": {},
+                    "user": "",
+                    "response_format": null
+                  },
+                  "output": {
+                    "id": "chatcmpl-93oRMFkuSnhdjkALWZ9hQNoQDzKwy",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "{\"category\": \"Academic\", \"evidence\": \"Both\"}",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        },
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ],
+                    "created": 1710695904,
+                    "model": "gpt-35-turbo",
+                    "object": "chat.completion",
+                    "system_fingerprint": null,
+                    "usage": {
+                      "completion_tokens": 14,
+                      "prompt_tokens": 685,
+                      "total_tokens": 699
+                    },
+                    "prompt_filter_results": [
+                      {
+                        "prompt_index": 0,
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "start_time": 1710692304.059236,
+                  "end_time": 1710692304.511564,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "5e3884f5-242b-4b30-bd33-1baa787f051f",
+                  "id": "b212a4f2-369f-4d4e-88c1-b0a21cded1e9",
+                  "system_metrics": {
+                    "completion_tokens": 14,
+                    "prompt_tokens": 685,
+                    "total_tokens": 699
+                  }
+                }
+              ],
+              "node_name": "classify_with_llm",
+              "parent_id": "",
+              "id": "5e3884f5-242b-4b30-bd33-1baa787f051f",
+              "system_metrics": {
+                "completion_tokens": 14,
+                "prompt_tokens": 685,
+                "total_tokens": 699
+              }
+            },
+            {
+              "name": "convert_to_dict",
+              "type": "Tool",
+              "inputs": {
+                "input_str": "{\"category\": \"Academic\", \"evidence\": \"Both\"}"
+              },
+              "output": {
+                "category": "Academic",
+                "evidence": "Both"
+              },
+              "start_time": 1710692304.527192,
+              "end_time": 1710692304.527192,
+              "error": null,
+              "children": [],
+              "node_name": "convert_to_dict",
+              "parent_id": "",
+              "id": "43c52297-7d87-4d58-b0c7-6dd71f331006",
+              "system_metrics": {}
+            }
+          ],
+          "system_metrics": {
+            "duration": 3.480281,
+            "prompt_tokens": 1091,
+            "completion_tokens": 115,
+            "total_tokens": 1206
+          },
+          "inputs": {
+            "url": "https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2"
+          },
+          "output": {
+            "category": "Academic",
+            "evidence": "Both"
+          },
+          "error": null
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 3.480281,
+        "prompt_tokens": 1091,
+        "completion_tokens": 115,
+        "total_tokens": 1206
+      },
+      "result": {
+        "category": "Academic",
+        "evidence": "Both"
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "fetch_text_content_from_url",
+      "flow_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda",
+      "run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_fetch_text_content_from_url_0",
+      "status": "Completed",
+      "inputs": {
+        "url": "https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2"
+      },
+      "output": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow - Azure Machine Learning | Microsoft Learn\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\nThis browser is no longer supported.\nUpgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.\n\n\r\nDownload Microsoft Edge\t\t\t\t\t\n\r\nMore info about Internet Explorer and Microsoft Edge\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\nTable of contents\t\t\t\t\t\t\n\n\n\nExit focus mode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\nEdit\n\n\n\n\n\nPrint\n\n\n\n\n\n\nTwitter\n\n\n\n\n\nLinkedIn\n\n\n\n\n\nFacebook\n\n\n\n\n\nEmail\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow\n\n\n\n\r\nArticle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n11/02/2023\n\n\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 contributors\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIn this article\n\n\nIn prompt Flow, you can deploy flow to an Azure Machine Learning managed online endpoint for real-time inference.\nWhen consuming the endpoint by sending a request, the default behavior is that the online endpoint will keep waiting until the whole response is ready, and then send it back to the client. This can cause a long delay for the client and a poor user experience.\nTo avoid this, you can use streaming when you consume the endpoints. Once streaming enabled, you don't have to wait for the whole response to be ready. Instead, the server will send back the response in chunks as they're generated. The client can then display the response progressively, with less waiting time and more interactivity.\nThis article will describe the scope of streaming, how streaming works, and how to consume streaming endpoints.\nCreate a streaming enabled flow\nIf you want to use the streaming mode, you need to create a flow that has a node that produces a string generator as the flowâs output. A string generator is an object that can return one string at a time when reques",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_0",
+      "start_time": "2024-03-17T17:18:21.046911Z",
+      "end_time": "2024-03-17T17:18:21.409735Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "fetch_text_content_from_url",
+          "type": "Tool",
+          "inputs": {
+            "url": "https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2"
+          },
+          "output": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow - Azure Machine Learning | Microsoft Learn\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\nThis browser is no longer supported.\nUpgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.\n\n\r\nDownload Microsoft Edge\t\t\t\t\t\n\r\nMore info about Internet Explorer and Microsoft Edge\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\nTable of contents\t\t\t\t\t\t\n\n\n\nExit focus mode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\nEdit\n\n\n\n\n\nPrint\n\n\n\n\n\n\nTwitter\n\n\n\n\n\nLinkedIn\n\n\n\n\n\nFacebook\n\n\n\n\n\nEmail\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow\n\n\n\n\r\nArticle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n11/02/2023\n\n\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 contributors\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIn this article\n\n\nIn prompt Flow, you can deploy flow to an Azure Machine Learning managed online endpoint for real-time inference.\nWhen consuming the endpoint by sending a request, the default behavior is that the online endpoint will keep waiting until the whole response is ready, and then send it back to the client. This can cause a long delay for the client and a poor user experience.\nTo avoid this, you can use streaming when you consume the endpoints. Once streaming enabled, you don't have to wait for the whole response to be ready. Instead, the server will send back the response in chunks as they're generated. The client can then display the response progressively, with less waiting time and more interactivity.\nThis article will describe the scope of streaming, how streaming works, and how to consume streaming endpoints.\nCreate a streaming enabled flow\nIf you want to use the streaming mode, you need to create a flow that has a node that produces a string generator as the flowâs output. A string generator is an object that can return one string at a time when reques",
+          "start_time": 1710692301.046911,
+          "end_time": 1710692301.408659,
+          "error": null,
+          "children": [],
+          "node_name": "fetch_text_content_from_url",
+          "parent_id": "",
+          "id": "af92d5cd-1103-431b-a82d-53e04bc0c244",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.362824
+      },
+      "result": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow - Azure Machine Learning | Microsoft Learn\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\nThis browser is no longer supported.\nUpgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.\n\n\r\nDownload Microsoft Edge\t\t\t\t\t\n\r\nMore info about Internet Explorer and Microsoft Edge\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\nTable of contents\t\t\t\t\t\t\n\n\n\nExit focus mode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\nEdit\n\n\n\n\n\nPrint\n\n\n\n\n\n\nTwitter\n\n\n\n\n\nLinkedIn\n\n\n\n\n\nFacebook\n\n\n\n\n\nEmail\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow\n\n\n\n\r\nArticle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n11/02/2023\n\n\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 contributors\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIn this article\n\n\nIn prompt Flow, you can deploy flow to an Azure Machine Learning managed online endpoint for real-time inference.\nWhen consuming the endpoint by sending a request, the default behavior is that the online endpoint will keep waiting until the whole response is ready, and then send it back to the client. This can cause a long delay for the client and a poor user experience.\nTo avoid this, you can use streaming when you consume the endpoints. Once streaming enabled, you don't have to wait for the whole response to be ready. Instead, the server will send back the response in chunks as they're generated. The client can then display the response progressively, with less waiting time and more interactivity.\nThis article will describe the scope of streaming, how streaming works, and how to consume streaming endpoints.\nCreate a streaming enabled flow\nIf you want to use the streaming mode, you need to create a flow that has a node that produces a string generator as the flowâs output. A string generator is an object that can return one string at a time when reques"
+    },
+    {
+      "node": "prepare_examples",
+      "flow_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda",
+      "run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_prepare_examples_0",
+      "status": "Completed",
+      "inputs": {},
+      "output": [
+        {
+          "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+          "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+          "category": "App",
+          "evidence": "Both"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+          "category": "Channel",
+          "evidence": "URL"
+        },
+        {
+          "url": "https://arxiv.org/abs/2303.04671",
+          "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+          "category": "Academic",
+          "evidence": "Text content"
+        },
+        {
+          "url": "https://ab.politiaromana.ro/",
+          "text_content": "There is no content available for this text.",
+          "category": "None",
+          "evidence": "None"
+        }
+      ],
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_0",
+      "start_time": "2024-03-17T17:18:21.046911Z",
+      "end_time": "2024-03-17T17:18:21.055921Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "prepare_examples",
+          "type": "Tool",
+          "inputs": {},
+          "output": [
+            {
+              "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+              "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+              "category": "App",
+              "evidence": "Both"
+            },
+            {
+              "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+              "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+              "category": "Channel",
+              "evidence": "URL"
+            },
+            {
+              "url": "https://arxiv.org/abs/2303.04671",
+              "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+              "category": "Academic",
+              "evidence": "Text content"
+            },
+            {
+              "url": "https://ab.politiaromana.ro/",
+              "text_content": "There is no content available for this text.",
+              "category": "None",
+              "evidence": "None"
+            }
+          ],
+          "start_time": 1710692301.046911,
+          "end_time": 1710692301.055921,
+          "error": null,
+          "children": [],
+          "node_name": "prepare_examples",
+          "parent_id": "",
+          "id": "9d0ff2b8-7c4f-40b9-b369-c6ea46f670ef",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.00901
+      },
+      "result": [
+        {
+          "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+          "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+          "category": "App",
+          "evidence": "Both"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+          "category": "Channel",
+          "evidence": "URL"
+        },
+        {
+          "url": "https://arxiv.org/abs/2303.04671",
+          "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+          "category": "Academic",
+          "evidence": "Text content"
+        },
+        {
+          "url": "https://ab.politiaromana.ro/",
+          "text_content": "There is no content available for this text.",
+          "category": "None",
+          "evidence": "None"
+        }
+      ]
+    },
+    {
+      "node": "summarize_text_content",
+      "flow_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda",
+      "run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_summarize_text_content_0",
+      "status": "Completed",
+      "inputs": {
+        "deployment_name": "gpt-35-turbo",
+        "model": "gpt-3.5-turbo",
+        "max_tokens": 128,
+        "temperature": 0.2,
+        "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow - Azure Machine Learning | Microsoft Learn\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\nThis browser is no longer supported.\nUpgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.\n\n\r\nDownload Microsoft Edge\t\t\t\t\t\n\r\nMore info about Internet Explorer and Microsoft Edge\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\nTable of contents\t\t\t\t\t\t\n\n\n\nExit focus mode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\nEdit\n\n\n\n\n\nPrint\n\n\n\n\n\n\nTwitter\n\n\n\n\n\nLinkedIn\n\n\n\n\n\nFacebook\n\n\n\n\n\nEmail\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow\n\n\n\n\r\nArticle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n11/02/2023\n\n\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 contributors\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIn this article\n\n\nIn prompt Flow, you can deploy flow to an Azure Machine Learning managed online endpoint for real-time inference.\nWhen consuming the endpoint by sending a request, the default behavior is that the online endpoint will keep waiting until the whole response is ready, and then send it back to the client. This can cause a long delay for the client and a poor user experience.\nTo avoid this, you can use streaming when you consume the endpoints. Once streaming enabled, you don't have to wait for the whole response to be ready. Instead, the server will send back the response in chunks as they're generated. The client can then display the response progressively, with less waiting time and more interactivity.\nThis article will describe the scope of streaming, how streaming works, and how to consume streaming endpoints.\nCreate a streaming enabled flow\nIf you want to use the streaming mode, you need to create a flow that has a node that produces a string generator as the flowâs output. A string generator is an object that can return one string at a time when reques"
+      },
+      "output": "The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow.",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_0",
+      "start_time": "2024-03-17T17:18:21.411383Z",
+      "end_time": "2024-03-17T17:18:24.052726Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nPlease summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\n\nuser:\nText: {{text}}\nSummary: ",
+            "deployment_name": "gpt-35-turbo",
+            "model": "gpt-3.5-turbo",
+            "max_tokens": 128,
+            "temperature": 0.2,
+            "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow - Azure Machine Learning | Microsoft Learn\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\nThis browser is no longer supported.\nUpgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.\n\n\r\nDownload Microsoft Edge\t\t\t\t\t\n\r\nMore info about Internet Explorer and Microsoft Edge\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\nTable of contents\t\t\t\t\t\t\n\n\n\nExit focus mode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\nEdit\n\n\n\n\n\nPrint\n\n\n\n\n\n\nTwitter\n\n\n\n\n\nLinkedIn\n\n\n\n\n\nFacebook\n\n\n\n\n\nEmail\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow\n\n\n\n\r\nArticle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n11/02/2023\n\n\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 contributors\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIn this article\n\n\nIn prompt Flow, you can deploy flow to an Azure Machine Learning managed online endpoint for real-time inference.\nWhen consuming the endpoint by sending a request, the default behavior is that the online endpoint will keep waiting until the whole response is ready, and then send it back to the client. This can cause a long delay for the client and a poor user experience.\nTo avoid this, you can use streaming when you consume the endpoints. Once streaming enabled, you don't have to wait for the whole response to be ready. Instead, the server will send back the response in chunks as they're generated. The client can then display the response progressively, with less waiting time and more interactivity.\nThis article will describe the scope of streaming, how streaming works, and how to consume streaming endpoints.\nCreate a streaming enabled flow\nIf you want to use the streaming mode, you need to create a flow that has a node that produces a string generator as the flowâs output. A string generator is an object that can return one string at a time when reques"
+          },
+          "output": "The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow.",
+          "start_time": 1710692301.411927,
+          "end_time": 1710692304.044676,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.chat.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-35-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Text: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow - Azure Machine Learning | Microsoft Learn\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to main content\n\n\n\nThis browser is no longer supported.\nUpgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.\n\n\r\nDownload Microsoft Edge\t\t\t\t\t\n\r\nMore info about Internet Explorer and Microsoft Edge\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\nTable of contents\t\t\t\t\t\t\n\n\n\nExit focus mode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\n\nRead in English\n\n\n\n\n\nSave\n\n\n\n\n\nEdit\n\n\n\n\n\nPrint\n\n\n\n\n\n\nTwitter\n\n\n\n\n\nLinkedIn\n\n\n\n\n\nFacebook\n\n\n\n\n\nEmail\n\n\n\n\n\n\n\n\n\n\n\n\nTable of contents\n\n\n\n\nHow to use streaming endpoints deployed from prompt Flow\n\n\n\n\r\nArticle\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n11/02/2023\n\n\n\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3 contributors\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\nFeedback\n\n\n\n\n\nIn this article\n\n\nIn prompt Flow, you can deploy flow to an Azure Machine Learning managed online endpoint for real-time inference.\nWhen consuming the endpoint by sending a request, the default behavior is that the online endpoint will keep waiting until the whole response is ready, and then send it back to the client. This can cause a long delay for the client and a poor user experience.\nTo avoid this, you can use streaming when you consume the endpoints. Once streaming enabled, you don't have to wait for the whole response to be ready. Instead, the server will send back the response in chunks as they're generated. The client can then display the response progressively, with less waiting time and more interactivity.\nThis article will describe the scope of streaming, how streaming works, and how to consume streaming endpoints.\nCreate a streaming enabled flow\nIf you want to use the streaming mode, you need to create a flow that has a node that produces a string generator as the flowâs output. A string generator is an object that can return one string at a time when reques\nSummary:"
+                  }
+                ],
+                "temperature": 0.2,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "stop": null,
+                "max_tokens": 128,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": "",
+                "response_format": null
+              },
+              "output": {
+                "id": "chatcmpl-93oRKyxDUDwp9oV0G7bisA89ki15o",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow.",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    },
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ],
+                "created": 1710695902,
+                "model": "gpt-35-turbo",
+                "object": "chat.completion",
+                "system_fingerprint": null,
+                "usage": {
+                  "completion_tokens": 101,
+                  "prompt_tokens": 406,
+                  "total_tokens": 507
+                },
+                "prompt_filter_results": [
+                  {
+                    "prompt_index": 0,
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ]
+              },
+              "start_time": 1710692301.423728,
+              "end_time": 1710692304.044676,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "9047566e-8d68-44d3-a855-04f81e8d07f9",
+              "id": "8ca61bda-8254-4efa-a5c5-d0276628750b",
+              "system_metrics": {
+                "completion_tokens": 101,
+                "prompt_tokens": 406,
+                "total_tokens": 507
+              }
+            }
+          ],
+          "node_name": "summarize_text_content",
+          "parent_id": "",
+          "id": "9047566e-8d68-44d3-a855-04f81e8d07f9",
+          "system_metrics": {
+            "completion_tokens": 101,
+            "prompt_tokens": 406,
+            "total_tokens": 507
+          }
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 101,
+        "prompt_tokens": 406,
+        "total_tokens": 507,
+        "duration": 2.641343
+      },
+      "result": "The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow."
+    },
+    {
+      "node": "classify_with_llm",
+      "flow_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda",
+      "run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_classify_with_llm_0",
+      "status": "Completed",
+      "inputs": {
+        "deployment_name": "gpt-35-turbo",
+        "model": "gpt-3.5-turbo",
+        "max_tokens": 128,
+        "temperature": 0.2,
+        "url": "https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2",
+        "text_content": "The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow.",
+        "examples": [
+          {
+            "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+            "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+            "category": "App",
+            "evidence": "Both"
+          },
+          {
+            "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+            "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+            "category": "Channel",
+            "evidence": "URL"
+          },
+          {
+            "url": "https://arxiv.org/abs/2303.04671",
+            "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+            "category": "Academic",
+            "evidence": "Text content"
+          },
+          {
+            "url": "https://ab.politiaromana.ro/",
+            "text_content": "There is no content available for this text.",
+            "category": "None",
+            "evidence": "None"
+          }
+        ]
+      },
+      "output": "{\"category\": \"Academic\", \"evidence\": \"Both\"}",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_0",
+      "start_time": "2024-03-17T17:18:24.052726Z",
+      "end_time": "2024-03-17T17:18:24.527192Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nYour task is to classify a given url into one of the following categories:\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nuser:\nThe selection range of the value of \"category\" must be within \"Movie\", \"App\", \"Academic\", \"Channel\", \"Profile\", \"PDF\" and \"None\".\nThe selection range of the value of \"evidence\" must be within \"Url\", \"Text content\", and \"Both\".\nHere are a few examples:\n{% for ex in examples %}\nURL: {{ex.url}}\nText content: {{ex.text_content}}\nOUTPUT:\n{\"category\": \"{{ex.category}}\", \"evidence\": \"{{ex.evidence}}\"}\n\n{% endfor %}\n\nFor a given URL and text content, classify the url to complete the category and indicate evidence:\nURL: {{url}}\nText content: {{text_content}}.\nOUTPUT:",
+            "deployment_name": "gpt-35-turbo",
+            "model": "gpt-3.5-turbo",
+            "max_tokens": 128,
+            "temperature": 0.2,
+            "url": "https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2",
+            "text_content": "The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow.",
+            "examples": [
+              {
+                "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                "category": "App",
+                "evidence": "Both"
+              },
+              {
+                "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                "category": "Channel",
+                "evidence": "URL"
+              },
+              {
+                "url": "https://arxiv.org/abs/2303.04671",
+                "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                "category": "Academic",
+                "evidence": "Text content"
+              },
+              {
+                "url": "https://ab.politiaromana.ro/",
+                "text_content": "There is no content available for this text.",
+                "category": "None",
+                "evidence": "None"
+              }
+            ]
+          },
+          "output": "{\"category\": \"Academic\", \"evidence\": \"Both\"}",
+          "start_time": 1710692304.052726,
+          "end_time": 1710692304.511564,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.chat.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-35-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Your task is to classify a given url into one of the following categories:\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both."
+                  },
+                  {
+                    "role": "user",
+                    "content": "The selection range of the value of \"category\" must be within \"Movie\", \"App\", \"Academic\", \"Channel\", \"Profile\", \"PDF\" and \"None\".\nThe selection range of the value of \"evidence\" must be within \"Url\", \"Text content\", and \"Both\".\nHere are a few examples:\nURL: https://play.google.com/store/apps/details?id=com.spotify.music\nText content: Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.\nOUTPUT:\n{\"category\": \"App\", \"evidence\": \"Both\"}\n\nURL: https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw\nText content: NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.\nOUTPUT:\n{\"category\": \"Channel\", \"evidence\": \"URL\"}\n\nURL: https://arxiv.org/abs/2303.04671\nText content: Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.\nOUTPUT:\n{\"category\": \"Academic\", \"evidence\": \"Text content\"}\n\nURL: https://ab.politiaromana.ro/\nText content: There is no content available for this text.\nOUTPUT:\n{\"category\": \"None\", \"evidence\": \"None\"}\n\n\nFor a given URL and text content, classify the url to complete the category and indicate evidence:\nURL: https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-enable-streaming-mode?view=azureml-api-2\nText content: The article explains how to use streaming endpoints deployed from prompt Flow in Azure Machine Learning. By default, the online endpoint waits for the whole response to be ready before sending it back to the client, causing a long delay and poor user experience. To avoid this, streaming can be enabled, which sends back the response in chunks as they're generated, allowing for a more interactive and less waiting time experience. The article describes the scope of streaming, how it works, and how to create a streaming-enabled flow..\nOUTPUT:"
+                  }
+                ],
+                "temperature": 0.2,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "stop": null,
+                "max_tokens": 128,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": "",
+                "response_format": null
+              },
+              "output": {
+                "id": "chatcmpl-93oRMFkuSnhdjkALWZ9hQNoQDzKwy",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "{\"category\": \"Academic\", \"evidence\": \"Both\"}",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    },
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ],
+                "created": 1710695904,
+                "model": "gpt-35-turbo",
+                "object": "chat.completion",
+                "system_fingerprint": null,
+                "usage": {
+                  "completion_tokens": 14,
+                  "prompt_tokens": 685,
+                  "total_tokens": 699
+                },
+                "prompt_filter_results": [
+                  {
+                    "prompt_index": 0,
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ]
+              },
+              "start_time": 1710692304.059236,
+              "end_time": 1710692304.511564,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "5e3884f5-242b-4b30-bd33-1baa787f051f",
+              "id": "b212a4f2-369f-4d4e-88c1-b0a21cded1e9",
+              "system_metrics": {
+                "completion_tokens": 14,
+                "prompt_tokens": 685,
+                "total_tokens": 699
+              }
+            }
+          ],
+          "node_name": "classify_with_llm",
+          "parent_id": "",
+          "id": "5e3884f5-242b-4b30-bd33-1baa787f051f",
+          "system_metrics": {
+            "completion_tokens": 14,
+            "prompt_tokens": 685,
+            "total_tokens": 699
+          }
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 14,
+        "prompt_tokens": 685,
+        "total_tokens": 699,
+        "duration": 0.474466
+      },
+      "result": "{\"category\": \"Academic\", \"evidence\": \"Both\"}"
+    },
+    {
+      "node": "convert_to_dict",
+      "flow_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda",
+      "run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_convert_to_dict_0",
+      "status": "Completed",
+      "inputs": {
+        "input_str": "{\"category\": \"Academic\", \"evidence\": \"Both\"}"
+      },
+      "output": {
+        "category": "Academic",
+        "evidence": "Both"
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "f66e2e5e-01d6-4ca7-9752-df0837981fda_0",
+      "start_time": "2024-03-17T17:18:24.527192Z",
+      "end_time": "2024-03-17T17:18:24.527192Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "convert_to_dict",
+          "type": "Tool",
+          "inputs": {
+            "input_str": "{\"category\": \"Academic\", \"evidence\": \"Both\"}"
+          },
+          "output": {
+            "category": "Academic",
+            "evidence": "Both"
+          },
+          "start_time": 1710692304.527192,
+          "end_time": 1710692304.527192,
+          "error": null,
+          "children": [],
+          "node_name": "convert_to_dict",
+          "parent_id": "",
+          "id": "43c52297-7d87-4d58-b0c7-6dd71f331006",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.0
+      },
+      "result": {
+        "category": "Academic",
+        "evidence": "Both"
+      }
+    }
+  ]
+}

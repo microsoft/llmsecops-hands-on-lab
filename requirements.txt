@@ -1,0 +1,12 @@
+promptflow>=1.8.0
+promptflow-evals
+streamlit
+keyrings.alt
+pypdf2
+faiss-cpu
+streamlit
+semantic-kernel==1.0.5
+pyrit==0.4.0
+torch 
+TensorFlow >= 0.2.0
+openai==1.30.5

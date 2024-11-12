@@ -1,0 +1,41 @@
+{
+  "package": {},
+  "code": {
+    "line_process.py": {
+      "type": "python",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "prediction": {
+          "type": [
+            "string"
+          ]
+        },
+        "groundtruth": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "This tool processes the prediction of a single line and returns the processed result.\n\n:param question: the user question of a single line.\n:param groundtruth: the groundtruth of a single line.\n:param prediction: the prediction of a single line.",
+      "source": "line_process.py",
+      "function": "line_process"
+    },
+    "aggregate.py": {
+      "type": "python",
+      "inputs": {
+        "processed_results": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "description": "This tool aggregates the processed result of all lines and calculate the accuracy. Then log metric for the accuracy.\n\n:param processed_results: List of the output of line_process node.",
+      "source": "aggregate.py",
+      "function": "aggregate"
+    }
+  }
+}

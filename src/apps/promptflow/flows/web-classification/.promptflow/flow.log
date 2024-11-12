@@ -1,0 +1,12 @@
+2024-03-17 18:18:21 +0100   23056 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-03-17 18:18:21 +0100   23056 execution.flow     INFO     Start to run 5 nodes with concurrency level 16.
+2024-03-17 18:18:21 +0100   23056 execution.flow     INFO     Executing node fetch_text_content_from_url. node run id: f66e2e5e-01d6-4ca7-9752-df0837981fda_fetch_text_content_from_url_0
+2024-03-17 18:18:21 +0100   23056 execution.flow     INFO     Executing node prepare_examples. node run id: f66e2e5e-01d6-4ca7-9752-df0837981fda_prepare_examples_0
+2024-03-17 18:18:21 +0100   23056 execution.flow     INFO     Node prepare_examples completes.
+2024-03-17 18:18:21 +0100   23056 execution.flow     INFO     Node fetch_text_content_from_url completes.
+2024-03-17 18:18:21 +0100   23056 execution.flow     INFO     Executing node summarize_text_content. node run id: f66e2e5e-01d6-4ca7-9752-df0837981fda_summarize_text_content_0
+2024-03-17 18:18:24 +0100   23056 execution.flow     INFO     Node summarize_text_content completes.
+2024-03-17 18:18:24 +0100   23056 execution.flow     INFO     Executing node classify_with_llm. node run id: f66e2e5e-01d6-4ca7-9752-df0837981fda_classify_with_llm_0
+2024-03-17 18:18:24 +0100   23056 execution.flow     INFO     Node classify_with_llm completes.
+2024-03-17 18:18:24 +0100   23056 execution.flow     INFO     Executing node convert_to_dict. node run id: f66e2e5e-01d6-4ca7-9752-df0837981fda_convert_to_dict_0
+2024-03-17 18:18:24 +0100   23056 execution.flow     INFO     Node convert_to_dict completes.
