@@ -1,0 +1,2 @@
+azureml-metrics[generative-ai]
+promptflow

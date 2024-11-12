@@ -1,0 +1,3 @@
+category: "reservationchatbot"
+true_description: "Text contains confirmation for canceled reservation. It does not need to be complete or include all components for the result to be True."
+false_description: "Text does not contain confirmation for canceled reservation"

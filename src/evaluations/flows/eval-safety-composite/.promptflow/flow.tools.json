@@ -1,0 +1,40 @@
+{
+  "package": {},
+  "code": {
+    "line_process.py": {
+      "type": "python",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "prediction": {
+          "type": [
+            "string"
+          ]
+        },
+        "groundtruth": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "This tool processes the prediction of a single line and returns the processed result.\n\n:param question: the user question of a single line.\n:param groundtruth: the groundtruth of a single line.\n:param prediction: the prediction of a single line.",
+      "source": "line_process.py",
+      "function": "line_process"
+    },
+    "aggregate.py": {
+      "type": "python",
+      "inputs": {
+        "processed_results": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "aggregate.py",
+      "function": "aggregate"
+    }
+  }
+}

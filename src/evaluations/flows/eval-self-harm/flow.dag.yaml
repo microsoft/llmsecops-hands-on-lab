@@ -1,0 +1,35 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  question:
+    type: string
+    default: coucou
+  prediction:
+    type: string
+    default: coucou
+  groundtruth:
+    type: string
+    default: coucou
+outputs:
+  results:
+    type: string
+    reference: ${line_process.output}
+nodes:
+- name: line_process
+  type: python
+  source:
+    type: code
+    path: line_process.py
+  inputs:
+    groundtruth: ${inputs.groundtruth}
+    prediction: ${inputs.prediction}
+    question: ${inputs.question}
+- name: aggregate
+  type: python
+  source:
+    type: code
+    path: aggregate.py
+  inputs:
+    processed_results: ${line_process.output}
+  aggregation: true

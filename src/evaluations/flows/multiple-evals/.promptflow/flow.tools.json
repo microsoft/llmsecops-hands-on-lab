@@ -1,0 +1,648 @@
+{
+  "package": {},
+  "code": {
+    "parse_service_response.py": {
+      "name": "parse_service_response.py",
+      "type": "python",
+      "inputs": {
+        "batch_response": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${call_rai_service.output}",
+          "id": "7nu9u9y4"
+        },
+        "selected_label_keys": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${select_metrics.output}",
+          "id": "9c0hnlng"
+        }
+      },
+      "source": "parse_service_response.py",
+      "function": "parse_response",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "parse_service_response.py"
+    },
+    "parse_groundedness_response.py": {
+      "name": "parse_groundedness_response.py",
+      "type": "python",
+      "inputs": {
+        "batch_response": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${call_groundedness_service.output}",
+          "id": "6e51aqye"
+        },
+        "is_service_available": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${validate_service.output}",
+          "id": "bgyq76yt"
+        },
+        "llm_groundedness_response": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${gpt_groundedness.output}",
+          "id": "s5rmn3f6"
+        }
+      },
+      "source": "parse_groundedness_response.py",
+      "function": "parse_response",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "parse_groundedness_response.py"
+    },
+    "construct_groundedness_request.py": {
+      "name": "construct_groundedness_request.py",
+      "type": "python",
+      "inputs": {
+        "answer": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.answer}",
+          "id": "00ldcpvj"
+        },
+        "context": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.context}",
+          "id": "hloz7o0i"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.question}",
+          "id": "r3wq77hn"
+        }
+      },
+      "source": "construct_groundedness_request.py",
+      "function": "construct_request",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "construct_groundedness_request.py"
+    },
+    "call_groundedness_service.py": {
+      "name": "call_groundedness_service.py",
+      "type": "python",
+      "inputs": {
+        "request_body": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${construct_groundedness_request.output}",
+          "id": "d6f5zsn7"
+        }
+      },
+      "source": "call_groundedness_service.py",
+      "function": "call_groundedness_service",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "call_groundedness_service.py"
+    },
+    "format_service_output.py": {
+      "name": "format_service_output.py",
+      "type": "python",
+      "inputs": {
+        "parsed_responses": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${parse_service_response.output}",
+          "id": "398itzjm"
+        }
+      },
+      "source": "format_service_output.py",
+      "function": "format_service_output",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "format_service_output.py"
+    },
+    "call_gpt_groundedness.py": {
+      "name": "call_gpt_groundedness.py",
+      "type": "python",
+      "inputs": {
+        "answer": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.answer}",
+          "id": "karvu6p2"
+        },
+        "connection": {
+          "type": [
+            "AzureOpenAIConnection"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "Default_AzureOpenAI",
+          "realType": "AzureOpenAIConnection"
+        },
+        "context": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.context}",
+          "id": "7xq9h7yu"
+        },
+        "deployment_name": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.deployment_name}",
+          "id": "10n1914s"
+        }
+      },
+      "source": "call_gpt_groundedness.py",
+      "function": "call_gpt_groundedness",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "call_gpt_groundedness.py"
+    },
+    "call_rai_service.py": {
+      "name": "call_rai_service.py",
+      "type": "python",
+      "inputs": {
+        "request_body": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${construct_service_request.output}",
+          "id": "16d2tmw0"
+        }
+      },
+      "source": "call_rai_service.py",
+      "function": "call_rai_service",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "call_rai_service.py"
+    },
+    "concat_quality_scores.py": {
+      "name": "concat_quality_scores.py",
+      "type": "python",
+      "inputs": {
+        "f1_score": {
+          "type": [
+            "double"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${f1_score.output}",
+          "id": "wpcm9kf2"
+        },
+        "gpt_scores": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${evaluate_gpt_metrics.output}",
+          "id": "px5p3ks5"
+        }
+      },
+      "source": "concat_quality_scores.py",
+      "function": "concat_results",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "concat_quality_scores.py"
+    },
+    "concat_results.py": {
+      "name": "concat_results.py",
+      "type": "python",
+      "inputs": {
+        "groundedness_results": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${parse_groundedness_response.output}",
+          "id": "1mttzybc"
+        },
+        "quality_results": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${concat_quality_scores.output}",
+          "id": "rgoc4023"
+        },
+        "safety_results": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${format_service_output.output}",
+          "id": "zou56seu"
+        },
+        "selected_metrics": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${select_metrics.output}",
+          "id": "yyjaa9uc"
+        }
+      },
+      "source": "concat_results.py",
+      "function": "concat_results",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "concat_results.py"
+    },
+    "evaluate_gpt_metrics.py": {
+      "name": "evaluate_gpt_metrics.py",
+      "type": "python",
+      "inputs": {
+        "answer": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.answer}",
+          "id": "piuc4iq7"
+        },
+        "connection": {
+          "type": [
+            "AzureOpenAIConnection"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "Default_AzureOpenAI",
+          "id": "ow7q4z6a",
+          "realType": "AzureOpenAIConnection"
+        },
+        "context": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.context}",
+          "id": "g4aiapca"
+        },
+        "deployment_name": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.deployment_name}",
+          "id": "z3g3u3ia"
+        },
+        "ground_truth": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.ground_truth}",
+          "id": "oc8objyz"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.question}",
+          "id": "megeadte"
+        },
+        "valid_metrics": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${validate_input.output}",
+          "id": "fgqqsr0u"
+        }
+      },
+      "source": "evaluate_gpt_metrics.py",
+      "function": "evaluate_gpt_metrics",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "evaluate_gpt_metrics.py"
+    },
+    "aggregate_variants_results.py": {
+      "name": "aggregate_variants_results.py",
+      "type": "python",
+      "inputs": {
+        "results": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${concat_scores.output}",
+          "id": "c8fmo8xf"
+        },
+        "selected_metrics": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${select_metrics.output}",
+          "id": "e7s27q4x"
+        },
+        "thresholds": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.threshold}",
+          "id": "m87luwja"
+        }
+      },
+      "source": "aggregate_variants_results.py",
+      "function": "aggregate_results",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "aggregate_variants_results.py"
+    },
+    "validate_input.py": {
+      "name": "validate_input.py",
+      "type": "python",
+      "inputs": {
+        "answer": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.answer}",
+          "id": "41ziw4v8"
+        },
+        "context": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.context}",
+          "id": "0bryjnuy"
+        },
+        "ground_truth": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.ground_truth}",
+          "id": "qp0mcwi3"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.question}",
+          "id": "u2njuz7x"
+        },
+        "selected_metrics": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${select_metrics.output}",
+          "id": "tyxjzino"
+        }
+      },
+      "source": "validate_input.py",
+      "function": "validate_input",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "validate_input.py"
+    },
+    "select_metrics.py": {
+      "name": "select_metrics.py",
+      "type": "python",
+      "inputs": {
+        "metrics": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.metrics}",
+          "id": "tni463bg"
+        }
+      },
+      "source": "select_metrics.py",
+      "function": "select_metrics",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "select_metrics.py"
+    },
+    "f1_score.py": {
+      "name": "f1_score.py",
+      "type": "python",
+      "inputs": {
+        "answer": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.answer}",
+          "id": "q58ok84z"
+        },
+        "ground_truth": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.ground_truth}",
+          "id": "iomeq2sj"
+        }
+      },
+      "source": "f1_score.py",
+      "function": "compute_f1_score",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "f1_score.py"
+    },
+    "construct_service_request.py": {
+      "name": "construct_service_request.py",
+      "type": "python",
+      "inputs": {
+        "answer": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.answer}",
+          "id": "wvun4gwe"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.question}",
+          "id": "4az5e70x"
+        },
+        "selected_metrics": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${select_metrics.output}",
+          "id": "3nfxwg6a"
+        }
+      },
+      "source": "construct_service_request.py",
+      "function": "construct_request",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "construct_service_request.py"
+    },
+    "validate_groundedness_service.py": {
+      "name": "validate_groundedness_service.py",
+      "type": "python",
+      "inputs": {
+        "flight": {
+          "type": [
+            "string"
+          ],
+          "default": "true",
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.groundedness_service_flight}",
+          "id": "dj4oexie"
+        },
+        "selected_metrics": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${select_metrics.output}",
+          "id": "zvo5slhd"
+        },
+        "validated_input": {
+          "type": [
+            "object"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${validate_input.output}"
+        }
+      },
+      "source": "validate_groundedness_service.py",
+      "function": "validate_safety_metric_input",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
+      "toolId": "validate_groundedness_service.py"
+    }
+  }
+}
