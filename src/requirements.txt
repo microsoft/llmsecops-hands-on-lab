@@ -1,5 +1,5 @@
 promptflow==1.2.0
-promptflow-tools==1.0.2
+promptflow-tools==1.6.0
 streamlit
 keyrings.alt
 pypdf2
