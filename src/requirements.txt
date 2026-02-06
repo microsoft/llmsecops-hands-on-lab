@@ -5,7 +5,7 @@ keyrings.alt
 pypdf2
 faiss-cpu
 streamlit
-semantic-kernel==1.0.5
+semantic-kernel==1.39.3
 pyrit==0.3.0
 PyTorch 
 TensorFlow >= 2.0
